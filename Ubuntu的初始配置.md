@@ -1,5 +1,7 @@
 # Ubuntu的初始配置
 
+
+
 [toc]
 
 ## 进入ubuntu引导盘
@@ -139,6 +141,16 @@ Gnome GUI控制界面: tweak
 [Gnome美化资源](https://www.gnome-look.org/)
 
 可供参考美化教程: [Ubuntu 18.04美化（朝着Mac的方向整容）](https://zhuanlan.zhihu.com/p/67693607)
+
+
+
+# 写在最后
+
+$\Huge{\textcolor{red}{\text{wslg yyds !!!!!!!}}}$​
+
+[wslg install instructions](https://github.com/microsoft/wslg)
+
+
 
 
 
