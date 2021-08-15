@@ -30,11 +30,11 @@
   <script>
     window.$docsify = {
       name: 'BeBubble',
-      repo: '',
+      repo: 'https://github.com/BeBubbled',
       //load side bar
       loadSidebar: true,
       loadSidebar: '_sidebar.md',
-      subMaxLevel: 2,
+      subMaxLevel: 5,
 
       //no emoji
       noEmoji: true,
@@ -49,6 +49,14 @@
       toc: {
         tocMaxLevel: 5,
         target: 'h1, h2, h3, h4, h5'
+      },
+
+
+      //docsify-copy-code
+      copyCode: {
+        buttonText : 'Copy to clipboard',
+        errorText  : 'Error',
+        successText: 'Copied'
       },
 
 
@@ -71,6 +79,11 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
   <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@latest/dist/docsify-katex.js"></script> -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+
+  <!-- Latest v2.x.x -->
+  <!-- https://github.com/jperasmus/docsify-copy-code -->
+  <script src="https://unpkg.com/docsify-copy-code@2"></script>
+
 
 
   

@@ -1,14 +1,47 @@
 # Start using docsify static website generator
 
-Useful command
+## Useful command
 
 ```shell
 docsify serve folder_name
 ```
 
-> %20 represent the space in url
+## Tips
+
+#### Q: Avoid copy paste file to post folder?
+
+```shell
+ln -s original_fil_path new_linked_path
+```
+
+Current [typora](https://typora.io/) not suoport symlink without -s on MacOS
+
+#### Q: what if space character in filename/path
+
+use
+
+```shell
+%20
+```
+
+ replace the space in <u>citation place/Hyperlink</u>
+
+## Backup
 
 [Awesome Docsify](https://github.com/docsifyjs/awesome-docsify)
+
+folder structure:
+
+* XXXXX.github.io
+  * _navbar.md
+  * _sidebar.md
+  * .git
+  * .nojekyll
+  * index.html
+  * README.md
+  * symlink_of_the_article
+
+
 
 index.html setting:
 
@@ -28,13 +61,13 @@ index.html setting:
   <style>
     :root {
       /* Reduce the font size */
-      --base-font-size: 14px;
+      /*--base-font-size: 14px;*/
 
       /* Change the theme color hue */
-      --theme-hue: 325;
+      /*--theme-hue: 325;*/
 
       /* Change the sidebar bullets */
-      --sidebar-nav-link-before-content: '😀';
+      /*--sidebar-nav-link-before-content: '😀';*/
     }
   </style>
 
@@ -49,7 +82,10 @@ index.html setting:
       //load side bar
       loadSidebar: true,
       loadSidebar: '_sidebar.md',
-      subMaxLevel: 2,
+      subMaxLevel: 5,
+
+      //no emoji
+      noEmoji: true,
 
       //load navigation bar
       loadNavbar: true,
@@ -61,6 +97,14 @@ index.html setting:
       toc: {
         tocMaxLevel: 5,
         target: 'h1, h2, h3, h4, h5'
+      },
+
+
+      //docsify-copy-code
+      copyCode: {
+        buttonText : 'Copy to clipboard',
+        errorText  : 'Error',
+        successText: 'Copied'
       },
 
 
@@ -84,14 +128,16 @@ index.html setting:
   <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@latest/dist/docsify-katex.js"></script> -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
 
+  <!-- Latest v2.x.x -->
+  <!-- https://github.com/jperasmus/docsify-copy-code -->
+  <script src="https://unpkg.com/docsify-copy-code@2"></script>
+
+
 
   
 
-
-
 </body>
 </html>
-
 ```
 
 
