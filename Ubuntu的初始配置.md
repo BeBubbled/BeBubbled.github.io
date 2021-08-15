@@ -1,8 +1,6 @@
 # Ubuntu的初始配置
 
-
-
-[toc]
+[TOC]
 
 ## 进入ubuntu引导盘
 
@@ -34,12 +32,12 @@ linux   /vmlinuz-XXXXXX root=UUID=XXXX-XXXX-XXXX-XXXXXXXXX ro quiet splash nomod
 
 分区问题:
 
-| 挂载点 | 大小     | 新分区的类型 | 新分区的位置 | 用于             |
-| ------ | -------- | ------------ | ------------ | ---------------- |
-| /boot  | 400MB    | 主分区       | 空间起始位置 | Ext4日志文件系统 |
-| swap   | 16384MB  | 逻辑分区     | 空间起始位置 | 交换空间         |
-| /      | 167936MB | 逻辑分区     | 空间起始位置 | Ext4日志文件系统 |
-| /home  | 152576   | 逻辑分区     | 空间起始位置 | Ext4日志文件系统 |
+| 挂载点   | 大小       | 新分区的类型 | 新分区的位置 | 用于         |
+| ----- | -------- | ------ | ------ | ---------- |
+| /boot | 400MB    | 主分区    | 空间起始位置 | Ext4日志文件系统 |
+| swap  | 16384MB  | 逻辑分区   | 空间起始位置 | 交换空间       |
+| /     | 167936MB | 逻辑分区   | 空间起始位置 | Ext4日志文件系统 |
+| /home | 152576   | 逻辑分区   | 空间起始位置 | Ext4日志文件系统 |
 
 安装启动引导器的设备，选择/boot所在分区
 
@@ -97,7 +95,7 @@ gedit pc
 从第一行往下数(不包含空行)第15行,你会看到
 
 ```
-key <CAPS> {	[ Control_L		]	};
+key <CAPS> {    [ Control_L        ]    };
 ```
 
 Caps_Lock替换为Control_L
@@ -120,8 +118,6 @@ sudo chmod 755 pc
 
 pc这个文件中的其他内容请不要随便更改, 我试过了, 然后重启,内核崩溃. 这个bug还未提交至ubuntu官方,主要是懒
 
-
-
 #### Cap_Lock设置为输入法切换键
 
 打开fcitx configuration-Global Config,Trigger Input Method点击第一个按钮按下Caps_lock,你会发现已经替换为Lctrl
@@ -142,13 +138,12 @@ Gnome GUI控制界面: tweak
 
 可供参考美化教程: [Ubuntu 18.04美化（朝着Mac的方向整容）](https://zhuanlan.zhihu.com/p/67693607)
 
-
-
 # 写在最后
 
 $\Huge{\textcolor{red}{\text{WSLg yyds !!!!!!!}}}$​​
 
 [WSLg install instructions](https://github.com/microsoft/wslg)
+
 
 
 [分区参考]:https://www.jianshu.com/p/70da2204e24d
