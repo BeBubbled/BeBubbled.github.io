@@ -146,9 +146,9 @@ Gnome GUI控制界面: tweak
 
 # 写在最后
 
-$\Huge{\textcolor{red}{\text{wslg yyds !!!!!!!}}}$​
+$\Huge{\textcolor{red}{\text{WSLg yyds !!!!!!!}}}$​​
 
-[wslg install instructions](https://github.com/microsoft/wslg)
+[WSLg install instructions](https://github.com/microsoft/wslg)
 
 
 
