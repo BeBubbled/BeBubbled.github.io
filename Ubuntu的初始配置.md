@@ -140,10 +140,10 @@ Gnome GUI控制界面: tweak
 
 # 写在最后
 
-$\Huge{\textcolor{red}{\text{WSLg yyds !!!!!!!}}}$​​
+$$
+\Huge{\textcolor{red}{\text{WSLg yyds !!!!!!!}}}
+$$
 
 [WSLg install instructions](https://github.com/microsoft/wslg)
-
-
 
 [分区参考]:https://www.jianshu.com/p/70da2204e24d
