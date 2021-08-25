@@ -104,21 +104,21 @@ Note:
       
       $$
       \begin{array}{l}
-\text { Accuracy }=\frac{1}{T} \sum_{i=1}^{T} R_{T, i}\\
-\qquad\text{explanation: skip}\\
-\text { Backward Transfer }=\frac{1}{T-1} \sum_{i=1}^{T-1} (R_{T,i}-R_{i, i})
-\left\{
-\begin{array}{l}
-<0,usually <0\\
-=0,\\
-0,great job!\\
-\end{array}
-\right.\\
-\qquad\qquad=\text{average value of}\sum(\text{final accuracy of each task}-\text{initial accuracy of each task})\\
-\qquad\text{explanation: measure how better this life-long learning it is }\\\\
-\text { Forward Transfer }=\frac{1}{T-1} \sum_{i=2}^{T} R_{i-1, i}-R_{0, i}\\
-\qquad \text{explanation: how better it is before learn task T}
-\end{array}\\
+      \text { Accuracy }=\frac{1}{T} \sum_{i=1}^{T} R_{T, i}\\
+      \qquad\text{explanation: skip}\\
+      \text { Backward Transfer }=\frac{1}{T-1} \sum_{i=1}^{T-1} (R_{T,i}-R_{i, i})
+      \left\{
+      \begin{array}{l}
+      <0,usually <0\\
+      =0,\\
+      0,great job!\\
+      \end{array}
+      \right.\\
+      \qquad\qquad=\text{average value of}\sum(\text{final accuracy of each task}-\text{initial accuracy of each task})\\
+      \qquad\text{explanation: measure how better this life-long learning it is }\\\\
+      \text { Forward Transfer }=\frac{1}{T-1} \sum_{i=2}^{T} R_{i-1, i}-R_{0, i}\\
+      \qquad \text{explanation: how better it is before learn task T}
+      \end{array}\\
       $$
 
 * Model Expansion
@@ -157,13 +157,10 @@ Future development of life-long learning
 
 # Literature Comments
 
+## [EWC](https://drive.google.com/file/d/1eUoUjlcSg-DS3Tr-zn_ViPQHyJdg4bqH/view?usp=sharing)
+
 Bayes Point of View:
-
 $$
-$$
-
-$$
-
 \begin{array}{ll}
 \log( p(\theta \mid \mathcal{D}))&=log(\dfrac{p(\mathcal{D} \mid \theta)* p(\theta)}{p(\mathcal{D})})\\
 \log p(\theta \mid \mathcal{D})&=\log p(\mathcal{D} \mid \theta)+\log p(\theta)-\log p(\mathcal{D})\\
@@ -185,6 +182,8 @@ Lost Function:
 $$
 L^{\prime}(\theta)=L(\theta)+\lambda \sum b_{i}\left(\theta_{i}-\theta_{i}^{b}\right)^{2}
 $$
+
+
 
 # Reading Waitlist
 
