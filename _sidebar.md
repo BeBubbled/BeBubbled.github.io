@@ -1,6 +1,4 @@
 - SideBar
-
-  - [Main Page](/)
-  - [Ubuntu的初始配置.md](Ubuntu的初始配置.md)
   
-
+  - [Main Page](/)
+  - [Independent Study on Life-long Learning](Literature%20Comments%20Notes.md)
