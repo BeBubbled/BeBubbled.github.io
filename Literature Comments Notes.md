@@ -254,5 +254,3 @@ explore connected papers in a
 # Consideration
 
 The Essence of Neural Network
-
-CASSSS

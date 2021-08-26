@@ -434,5 +434,3 @@ class MyLinkedList {
           return reverse(prev, cur);
       }
   ```
-
-
