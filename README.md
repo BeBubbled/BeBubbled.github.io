@@ -3,7 +3,7 @@
 ## Useful command
 
 ```shell
-docsify serve folder_name
+docsify serve BeBubbled.github.io
 ```
 
 ## Tips
@@ -41,8 +41,6 @@ folder structure:
   * README.md
   * symlink_of_the_article
 
-
-
 index.html setting:
 
 ```html
@@ -56,7 +54,7 @@ index.html setting:
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <!-- Theme: Simple -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-  
+
 
   <style>
     :root {
@@ -71,7 +69,7 @@ index.html setting:
     }
   </style>
 
-  
+
 </head>
 <body>
   <div id="app"></div>
@@ -134,13 +132,8 @@ index.html setting:
 
 
 
-  
+
 
 </body>
 </html>
 ```
-
-
-
-
-

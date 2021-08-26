@@ -65,7 +65,7 @@ Note:
 * Solution 2: train NN to generate fake/pseudo data 
   
   * idea: train a model A to create <u>fake/pseudo</u> data to save disk.
-  * flow chart![image-20210824112213330](PersonalResearch.assets/image-20210824112213330.png)
+  * flow chart![image-20210824112213330](Literature Comments Notes.assets/image-20210824112213330-20210825132047987.png)
     * [Continual Learning with Deep Generative Replay](https://arxiv.org/abs/1705.08690)
       * [FearNet: Brain-Inspired Model for Incremental Learning](https://arxiv.org/abs/1711.10563)
   * what if we change some pre-requisition: different task could not be undertake with same network structure
@@ -104,21 +104,21 @@ Note:
       
       $$
       \begin{array}{l}
-      \text { Accuracy }=\frac{1}{T} \sum_{i=1}^{T} R_{T, i}\\
-      \qquad\text{explanation: skip}\\
-      \text { Backward Transfer }=\frac{1}{T-1} \sum_{i=1}^{T-1} (R_{T,i}-R_{i, i})
-      \left\{
-      \begin{array}{l}
-      <0,usually <0\\
-      =0,\\
-      0,great job!\\
-      \end{array}
-      \right.\\
-      \qquad\qquad=\text{average value of}\sum(\text{final accuracy of each task}-\text{initial accuracy of each task})\\
-      \qquad\text{explanation: measure how better this life-long learning it is }\\\\
-      \text { Forward Transfer }=\frac{1}{T-1} \sum_{i=2}^{T} R_{i-1, i}-R_{0, i}\\
-      \qquad \text{explanation: how better it is before learn task T}
-      \end{array}\\
+\text { Accuracy }=\frac{1}{T} \sum_{i=1}^{T} R_{T, i}\\
+\qquad\text{explanation: skip}\\
+\text { Backward Transfer }=\frac{1}{T-1} \sum_{i=1}^{T-1} (R_{T,i}-R_{i, i})
+\left\{
+\begin{array}{l}
+<0,usually <0\\
+=0,\\
+0,great job!\\
+\end{array}
+\right.\\
+\qquad\qquad=\text{average value of}\sum(\text{final accuracy of each task}-\text{initial accuracy of each task})\\
+\qquad\text{explanation: measure how better this life-long learning it is }\\\\
+\text { Forward Transfer }=\frac{1}{T-1} \sum_{i=2}^{T} R_{i-1, i}-R_{0, i}\\
+\qquad \text{explanation: how better it is before learn task T}
+\end{array}\\
       $$
 
 * Model Expansion
@@ -132,18 +132,18 @@ Note:
     
     * [Progressive neural networks 2016](https://arxiv.org/abs/1606.04671)
       
-      * ![image-20210816044359382](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/2021/08/25-11-16-28-image-20210816044359382.png)
+      * ![image-20210816044359382](Literature Comments Notes.assets/25-11-16-28-image-20210816044359382-20210825132047978.png)
     
     * [Expert Gate](https://arxiv.org/abs/1611.06194)
       
       * The gate is used to find similar old task for new task.
         
-         Use the old task model's value to initialize this new task model's value.
+        Use the old task model's value to initialize this new task model's value.
       
       * multi task+classifier
     3. [Net2Net](https://arxiv.org/abs/1811.07017)
        
-       * ![image-20210816044951261](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/2021/08/25-11-16-32-image-20210816044951261.png)
+       * ![image-20210816044951261](Literature Comments Notes.assets/25-11-16-32-image-20210816044951261-20210825132047978.png)
        * add new neural while not forget
 
 Future development of life-long learning
@@ -178,12 +178,48 @@ $$
 \end{array}\\
 $$
 
+All the information about task A must therefore have been absorbed into the posterior distribution $p(\theta|D_{A)}$.
+
+Based on [A practical bayesian framework for backpropagation networks](https://authors.library.caltech.edu/13793/1/MACnc92b.pdf) work, we use Gaussian distribution with mean equals to $\theta ^{*}_{A}$ to simulate the posterior distribution. Diagonal precision : Diagonal of the Fisher information matrix F.
+
+Fisher information matrix F 
+
+($\color{red}{\text{Actually haven't fully understanded}}$)
+
+"the covariance of the gradient of the model’s log likelihood function with respect to points sampled from the model’s distribution"
+
+Usage: 
+
+1. estimate the variance of MLE
+
+2. ![img](Literature Comments Notes.assets/28c4c679b6758707ed779c066d0e8e3a_1440w-9912047.jpg)
+   
+   e.g. estimate the curvance of the log likehood's  top point
+   
+   the higher, the more information you could get
+
+3. 
+
+$$
+\begin{aligned}
+\overline{\mathcal{F}} &=E_{Q_{x y}}\left[\nabla \log p(x, y \mid \theta) \nabla \log p(x, y \mid \theta)^{\top}\right] \\
+&=E_{Q x}\left[E_{Q_{y}}\left[\nabla \log p(y \mid x, \theta) \nabla \log p(y \mid x, \theta)^{\top}\right]\right] \\
+&=\frac{1}{N} \sum_{n}\left[\nabla \log p\left(y_{n} \mid x_{n}, \theta\right) \nabla \log p\left(y_{n} \mid x_{n}, \theta\right)^{\top}\right]
+\end{aligned}
+$$
+
 Lost Function:
 $$
-L^{\prime}(\theta)=L(\theta)+\lambda \sum b_{i}\left(\theta_{i}-\theta_{i}^{b}\right)^{2}
+\mathcal{L}(\theta)=\mathcal{L}_{B}(\theta)+\sum_{i} \frac{\lambda}{2} F_{i}\left(\theta_{i}-\theta_{A, i}^{*}\right)^{2}\\
 $$
 
+$\theta^{*}_{A,i}$ parameter learned from task A
 
+Connected Papers:
+
+![image-20210825115037345](Literature Comments Notes.assets/image-20210825115037345-9912048.png)
+
+## MAS
 
 # Reading Waitlist
 
@@ -218,3 +254,5 @@ explore connected papers in a
 # Consideration
 
 The Essence of Neural Network
+
+CASSSS
