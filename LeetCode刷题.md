@@ -6,6 +6,22 @@
 
 刷题教程: [leetcode-master](https://github.com/youngyangyang04/leetcode-master)
 
+## [复杂度](https://www.bigocheatsheet.com/)
+
+![image-20221024084037436](/Users/bebubble/Library/Application Support/typora-user-images/image-20221024084037436.png)
+
+### 抽象数据结构的操作复杂度
+
+
+
+![image-20221023220959017](/Users/bebubble/Library/Application Support/typora-user-images/image-20221023220959017.png)
+
+## 数组排序
+
+![image-20221023221031715](/Users/bebubble/Library/Application Support/typora-user-images/image-20221023221031715.png)
+
+
+
 ## 模板
 
 ### Array
@@ -131,7 +147,7 @@ Although "while" inside the "for" loop, each ele actually been processed only tw
 
 Leetcode 59
 
-### Link List
+### Link List 237 141 92 25
 
 | -         | Insert | Lookup | Suit for                                                            |
 | --------- | ------ | ------ | ------------------------------------------------------------------- |
@@ -418,7 +434,7 @@ class MyLinkedList {
       public ListNode reverseList(ListNode head) {
           return reverse(null, head);
       }
-
+  
       private ListNode reverse(ListNode prev, ListNode cur) {
           if (cur == null) {
               return prev;
@@ -432,3 +448,24 @@ class MyLinkedList {
           return reverse(prev, cur);
       }
   ```
+
+### Heap
+
+#### Background
+
+PriorityQueue, Heap
+
+| -    | Online | Offline |
+| ---- | ------ | ------- |
+|      |        |         |
+
+
+
+
+
+
+
+
+
+
+

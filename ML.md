@@ -18,7 +18,7 @@
 """
 file:
 description:
-author: yq8821@glados.cs.rit.edu (Yanliang Qi)
+author: yq8821@glados.cs.rit.edu 
 """
 from tabulate import tabulate
 import numpy as np
@@ -373,7 +373,7 @@ if __name__ == '__main__':
 """
 file:
 description: 
-author: yq8821@glados.cs.rit.edu (Yanliang Qi)
+author: yq8821@glados.cs.rit.edu 
 author_or: 
 """
 import numpy as np
