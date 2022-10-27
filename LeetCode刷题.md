@@ -6,6 +6,14 @@
 
 刷题教程: [leetcode-master](https://github.com/youngyangyang04/leetcode-master)
 
+## 复杂度
+
+![](/Users/bebubble/Library/Application Support/typora-user-images/image-20221027061820654.png)![image-20221027061842225](/Users/bebubble/Library/Application Support/typora-user-images/image-20221027061842225.png)
+
+![image-20221027061852249](/Users/bebubble/Library/Application Support/typora-user-images/image-20221027061852249.png)
+
+
+
 ## 模板
 
 ### Array
@@ -437,7 +445,29 @@ class MyLinkedList {
 
 #### Background
 
-PriorityQueue, Heap
+Push, pop
+
+具体来说：
+
+- 如果永远都维护一个有序数组的方式取极值很容易，但是插队麻烦。
+- 如果永远都维护一个有序链表的方式取极值也容易。 不过要想查找足够快，而不是线性扫描，就需要借助索引，这种实现对应的就是优先级队列的**跳表实现**。
+- 如果永远都维护一个树的方式取极值也可以实现，比如根节点就是极值，这样 O(1) 也可以取到极值，但是调整过程需要 $O(logN)$。这种实现对应的就是优先级队列的**二叉堆实现**。
+
+简单总结下就是，**堆就是动态帮你求极值的**。当你需要动态求最大或最小值就就用它。而具体怎么实现，复杂度的分析我们之后讲，现在你只要记住使用场景，堆是如何解决这些问题的以及堆的 api 就够了。
+
+
+
+API: poll() peek and remove top value
+
+Peek() view the top value
+
+Add() inset the value to heap and sort, only O(logn)
+
+minHeap-> minmum value at the top
+
+maxHeap-> maximum value at the top
+
+maxHeap-> find kth Largest element->there are k elements bigger than the kth->
 
 
 
