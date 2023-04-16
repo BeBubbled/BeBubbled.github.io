@@ -1,16 +1,24 @@
 # LeetCode刷题
 
-[TOC]
+[toc]
 
-## 资源
+## 学习资源
 
 刷题教程: [leetcode-master](https://github.com/youngyangyang04/leetcode-master)
 
-## 模板
+## Background Knowledge
+
+### 复杂度
+
+![](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/uPic/image-20221027061820654.png)![image-20221027061842225](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/uPic/image-20221027061842225.png)
+
+![image-20221027061852249](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/uPic/image-20221027061852249.png)
+
+## Data Structure
 
 ### Array
 
-#### Binary Search
+### Binary Search
 
 应用条件:
 
@@ -20,7 +28,7 @@
 两种写法:
 
 1. 左闭右闭 [left, right]
-   
+
    ```java
    public static Integer binary_search_v1(ArrayList<Integer> nums, Integer target){
            int left=0;
@@ -38,9 +46,8 @@
            return -1;
        }
    ```
-
 2. 左闭右开 [left, right)
-   
+
    ```java
    public static Integer binary_search_v2(ArrayList<Integer> nums, Integer target){
            int left=0;
@@ -59,7 +66,7 @@
        }
    ```
 
-#### Two Pointers
+### Two Pointers
 
 ```java
 public static int two_pointers(int[] nums, int val) {
@@ -77,7 +84,7 @@ public static int two_pointers(int[] nums, int val) {
     }
 ```
 
-##### Three Pointers
+#### Three Pointers
 
 this scructure include two pointers in nums and another pointer for new list position
 
@@ -104,7 +111,7 @@ public int[] three_pointers(int[] nums) {
 
 **O(n)**
 
-##### Sliding Window
+### Sliding Window
 
 Leetcode 209
 
@@ -128,11 +135,13 @@ Although "while" inside the "for" loop, each ele actually been processed only tw
 
 **O(n)**
 
-##### 弱智顺时针转圈, 我就是不做, 咬死我
+**弱智顺时针转圈, 我就是不做, 咬死我**
 
 Leetcode 59
 
-### Link List 237 141 92 25
+### Link List
+
+Leetcode 237 141 92 25
 
 | -         | Insert | Lookup | Suit for                                                            |
 | --------- | ------ | ------ | ------------------------------------------------------------------- |
@@ -393,7 +402,7 @@ class MyLinkedList {
 #### Reverse single linked list
 
 * loop
-  
+
   ```java
   // 双指针
   class Solution {
@@ -411,9 +420,8 @@ class MyLinkedList {
       }
   }
   ```
-
 * recursive
-  
+
   ```java
   // 递归 
   class Solution {
@@ -437,6 +445,135 @@ class MyLinkedList {
 
 ### Heap
 
-#### Background
+**minHeap&&maxHeap**
 
-PriorityQueue, Heap
+```java
+PriorityQueue<int> minHeap = new  PriorityQueue<>((a,b)->a-b);
+PriorityQueue<int> maxHeap = new  PriorityQueue<>((a,b)->b-a);
+```
+
+
+
+**Background**
+
+Push, pop
+
+具体来说：
+
+- 如果永远都维护一个有序数组的方式取极值很容易，但是插队麻烦。
+- 如果永远都维护一个有序链表的方式取极值也容易。 不过要想查找足够快，而不是线性扫描，就需要借助索引，这种实现对应的就是优先级队列的**跳表实现**。
+- 如果永远都维护一个树的方式取极值也可以实现，比如根节点就是极值，这样 O(1) 也可以取到极值，但是调整过程需要 $O(logN)$。这种实现对应的就是优先级队列的**二叉堆实现**。
+
+简单总结下就是，**堆就是动态帮你求极值的**。当你需要动态求最大或最小值就就用它。而具体怎么实现，复杂度的分析我们之后讲，现在你只要记住使用场景，堆是如何解决这些问题的以及堆的 api 就够了。
+
+
+
+**API**
+
+poll() peek and remove top value
+
+peek() view the top value
+
+add() inset the value to heap and sort, only O(logn)
+
+offer() same as add()
+
+minHeap-> minmum value at the top
+
+maxHeap-> maximum value at the top
+
+maxHeap-> find kth Largest element->there are k elements bigger than the kth->
+
+
+
+template 
+
+[215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/description/)
+
+```java
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> minHeap=new PriorityQueue<>();
+        for(int i=0;i<k;i++){
+            minHeap.add(nums[i]);
+        }
+        for(int i=k;i<nums.length;i++){
+            if (nums[i]>minHeap.peek()){
+                minHeap.poll();
+                minHeap.add(nums[i]);
+            }
+        }
+        return minHeap.peek();
+
+    }
+}
+class Solution {
+# It's an online algorithm since each time the top of heap is the kth largest element, and
+#  dit's scalable if the input is a stream
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> minHeap=new PriorityQueue<>();
+        for(int x:nums){
+          if (minHeap.size()<k||x+=minHeap.peek()){
+            minHeap.offer(x);
+          }
+          if (minHeap.size()>k){
+            minHeap.poll();
+          }
+        return heap.peek()
+    }
+}
+```
+
+[23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/description/)
+
+```java
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        PriorityQueue<ListNode>minHeap=new PriorityQueue<>((a,b)->a.val-b.val);
+        for(ListNode Nodehead:lists){
+            if (Nodehead!=null){
+                minHeap.offer(Nodehead);
+            }
+        }
+        ListNode head=new ListNode(),cur=head;
+        while(!minHeap.isEmpty()){
+            ListNode top=minHeap.poll();
+            cur.next=top;
+            cur=top;
+            if (top.next!=null){
+                minHeap.offer(top.next);
+            }
+        }
+        return head.next;
+    }
+}
+```
+
+- Sorting O(nlogn)
+  - Sort the array and get the kth element
+- Max Heap O(n+klogn)
+  - Heapify the array, then poll $\mathrm{k}$ times
+- Min Heap O(nlogk)
+  - Maintain a size $\mathrm{k}$ min heap
+  - Add element to min heap if greater than or equal to the top element, adjust size if necessary
+  - At the end top of heap is the kth largest
+
+
+
+### HashMap
+
+当调用hashmap.keys()时, 返回的key实际是按照hashcode排序的
+
+## Leetcode
+
+### 509 Fibonacci Number
+
+递归, 基于公式
+
+> ```
+> F(0) = 0, F(1) = 1
+> F(n) = F(n - 1) + F(n - 2), for n > 1
+> ```
+
+
+

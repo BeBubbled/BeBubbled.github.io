@@ -5,7 +5,7 @@
 
 
 
-| Graph              | ![q2a-4573209](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/q2a-4573209-2771541.jpg) | ![q2b-4573212](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/q2b-4573212-2771700.jpg) | ![q2c-4573215](ML.assets/q2c-4573215.jpg)                    |
+| Graph              | ![q2a-4573209](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/q2a-4573209-2771541.jpg) | ![q2b-4573212](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/q2b-4573212-2771700.jpg) | ![q2c-4573215](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/q2c-4573215.jpg) |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Correctness Rate   | 94.7%                                                        | 94.7%                                                        | 95.7%                                                        |
 | Confusion Matrix   | [20.  0.  0.  0.]<br/> [ 0. 28.  0.  0.]<br/> [ 0.  0. 27.  0.]<br/> [ 3.  1.  1. 14.] | [20.  0.  0.  0.]<br/> [ 0. 28.  0.  0.]<br/> [ 0.  0. 27.  0.]<br/> [ 3.  1.  1. 14.] | [19.  0.  0.  1.]<br/> [ 0. 28.  0.  0.]<br/> [ 0.  0. 27.  0.]<br/> [ 1.  1.  1. 16.] |
