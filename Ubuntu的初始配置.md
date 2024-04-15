@@ -47,7 +47,7 @@ linux   /vmlinuz-XXXXXX root=UUID=XXXX-XXXX-XXXX-XXXXXXXXX ro quiet splash nomod
 
 打开Software&Updates,安装nvidia驱动
 
-![image-20200413140108423](https://raw.githubusercontent.com/BeBubbled/PicGoImages-WorkSpace/master/image-20200413140108423.png)
+![image-20200413140108423](../../Downloads/image-20200413140108423.png)
 
 ### 安装homebrew
 

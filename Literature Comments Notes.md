@@ -394,14 +394,14 @@ $$
 
 
 
-I have a question about the future  thesis. The thesis
-
-code up rorated EWC
-
-we will start running final experiments on all your baselines
 
 
 
 
 
-### ago109
+
+
+
+
+
+
