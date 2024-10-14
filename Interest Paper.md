@@ -7,5 +7,7 @@
 4. Achieving Forgetting Prevention and Knowledge Transfer in **Continual Learning**
 5. **Few-Shot** Incremental Learning with Continually Evolved Classifiers
 6. PackNet Adding Multiple Tasks to a Single Network by Iterative **Pruning**
-   1. DSD: **DENSE**-SPARSE-DENSE TRAINING FOR DEEP NEURAL NETWORKS
+
+7. [DEEP COMPLEX NETWORKS](https://arxiv.org/abs/1705.09792)
+8. [Local model poisoning attacks to {Byzantine-Robust} federated learning](https://www.usenix.org/conference/usenixsecurity20/presentation/fang)
 
