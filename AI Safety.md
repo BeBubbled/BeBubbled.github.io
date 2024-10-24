@@ -218,6 +218,86 @@ middle of the spectrum of advarsaries to train DDPM(数据生成模型)-> fake d
 
 
 
+### DDPM:
+
+Denoising Diffusion Probabilistic Model (DDPM) 是一种生成模型，它通过逐步向数据添加噪声然后去噪来生成新数据样本。DDPM利用扩散过程将输入数据转化为潜在表示，再从这些表示中生成新的数据样本。以下是DDPM算法的详细步骤和数学公式:
+#### 定义扩散过程
+
+扩散过程通过向数据逐步添加噪声，将数据分布变成标准高斯分布。扩散过程分为两个步骤：正向扩散 (向数据添加噪声) 和反向扩散 (去噪) 。
+
+##### 正向扩散过程
+
+正向扩散过程从数据分布 $q\left(x_0\right)$ 开始，逐步添加高斯噪声，使其变得越来越模糊，直到接近标准高斯分布。
+$$
+q\left(x_t \mid x_{t-1}\right)=\mathcal{N}\left(x_t ; \sqrt{1-\beta_t} x_{t-1}, \beta_t \mathbf{I}\right)
+$$
+
+其中， $\beta_t$ 是在每一步中添加的噪声的方差。
+经过 $T$ 步后，数据分布变为:
+$$
+q\left(x_T \mid x_0\right)=\mathcal{N}\left(x_T ; \sqrt{\bar{\alpha}_T} x_0,\left(1-\bar{\alpha}_T\right) \mathbf{I}\right)
+$$
+
+其中， $\bar{\alpha}_T=\prod_{t=1}^T\left(1-\beta_t\right)$ 。
+
+
+
+
+
+##### 反向扩散过程
+
+反向扩散过程通过逐步去噪来恢复数据。目标是学习一个模型 $p_\theta\left(x_{t-1} \mid x_t\right)$ ，用于逆转正向扩散过程:
+$$
+p_\theta\left(x_{t-1} \mid x_t\right)=\mathcal{N}\left(x_{t-1} ; \mu_\theta\left(x_t, t\right), \sigma_\theta^2 \mathbf{I}\right)
+$$
+
+其中， $\mu_\theta$ 和 $\sigma_\theta$ 是需要学习的参数。
+#### 训练目标
+
+为了训练反向扩散模型，DDPM采用变分推理，最小化变分下界 (Variational Lower Bound， VLB) 。训练目标可以分解为以下部分:
+$$
+L=L_T+\sum_{t=2}^T L_{t-1}+L_0
+$$
+
+其中，
+$$
+\begin{gathered}
+L_T=D_{K L}\left(q\left(x_T \mid x_0\right) \| p\left(x_T\right)\right) \\
+L_{t-1}=D_{K L}\left(q\left(x_{t-1} \mid x_t, x_0\right) \| p_\theta\left(x_{t-1} \mid x_t\right)\right) \\
+L_0=-\log p_\theta\left(x_0 \mid x_1\right)
+\end{gathered}
+$$
+
+其中， $D_{K L}$ 表示KL散度。
+
+
+
+#### 去噪过程
+
+训练完成后，使用反向扩散模型生成新数据。通过以下步誻逐步去噪，从标准高斯噪声生成新样本:
+1. 从标准高斯分布采样初始噪声 $x_T \sim \mathcal{N}(0, \mathbf{I})$ 。
+2. 对于每一时间步 $t=T, T-1, \ldots, 1$ ，依次应用反向扩散模型:
+$$
+x_{t-1} \sim p_\theta\left(x_{t-1} \mid x_t\right)
+$$
+
+直到得到最终的生成样本 $x_0$ 。
+
+
+
+
+
+
+DCGAN:
+
+
+
+
+
+
+
+
+
 
 
 
