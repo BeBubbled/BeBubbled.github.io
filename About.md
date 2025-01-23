@@ -1,10 +1,16 @@
-![IMG_2550](About.assets/IMG_2550.jpg)
+![Icon](About.assets/Image_2.png)
 
-About me: Prospective Ph.D. student
+About me: Ph.D. student
 
-Current Research Interest: Continual Learning, Transfer Learning, Few Shot Learning
+Current Research Interest: 
 
-Tools: Perplexity.ai, Pytorch, Scipy, Connected Papers, Paperswithcode
+* No Data Training
+  * [NO TRAINING DATA, NO CRY: MODEL EDITING WITHOUT TRAINING DATA OR FINETUNING](https://openreview.net/pdf?id=wLR9d5ZFpY)
+* Image2Video
+
+Tools: Chatgpt, Pytorch, Scipy, Connected Papers, Paperswithcode
+
+
 
 Funny things: 
 
