@@ -73,7 +73,7 @@ $$
 
 
 
-**Definition and Derivation of the Expected Value $E(X)$**
+**Expectation $E(X)$**
 $$
 \begin{aligned}
 E(X)= &\mu=\overline{x}=\sum x_ip(x_i)\\
@@ -88,7 +88,7 @@ $$
 
 
 
-**Definition and Expressions for the Variance $\mathrm{Var}(X)$**
+**Varance$\mathrm{Var}(X)$**
 $$
 \begin{aligned}
 Var(x)&=\sigma^2\\
@@ -105,17 +105,18 @@ $$
 
 $$
 \begin{alignat}{3}
-& \bf{贝叶斯}\\
+& \textbf{Bayes}\\\\
 &P(A|B)&&=\dfrac{P(A\cap B)}{P(B)}=\dfrac{P(A)P(B|A)}{P(B)}=\dfrac{P(B)P(A|B)}{P(B)}\\
 &P(A,B)&&=P(A,B)\\
-&P(A_{0:T})&&=P(A_0,A_1,A_2,\cdots, A_T)\\
-&\mathbf{链式法则}\\
-&P(A_0, A_1, A_2, \dots, A_T) &&= P(A_T) P(A_{T-1} \mid A_T) P(A_{T-2} \mid A_{T-1}, A_T) \cdots P(A_0 \mid A_1, A_2, \dots, A_T)
-& 全概率公式\\
-&P(B)&& = \sum_i P(B \mid C_i) P(C_i)\\
-&\bf{ 如果C发生时, A与B相互独立}\\
+&P(A_{0:T})&&=P(A_0,A_1,A_2,\cdots, A_T)\\\\
+&\textbf{Chain Rule of Probability}\\\\
+&P(A_0, A_1, A_2, \dots, A_T) &&= P(A_T) P(A_{T-1} \mid A_T) P(A_{T-2} \mid A_{T-1}, A_T) \cdots \\ &&& \qquad P(A_0 \mid A_1, A_2, \dots, A_T)\\
+& \textbf{Law of Total Probability}\\
+&P(B)&& = \sum_i P(B \mid C_i) P(C_i)\\\\
+&\textbf{Conditional Independence}\\ &\qquad \textbf{ given C}\\\\
 &P(A|B,C)&&=P(A|C)\\
-&P(A,B|C)&&=P(A|C)P(B|C)\\
+&P(A,B|C)&&=P(A|C)P(B|C)\\\\
+&\textbf{Marginal Probability}\\
 &P(A) &&= \int_B P(A, B) dB\\
 &P(A) &&= \sum_B P(A, B)\\
 &\mathbf{KL}\\
@@ -124,131 +125,5 @@ $$
 \end{alignat}
 $$
 
+## Stochastic differential equation (SDE)
 
-## $SS_{Res}\ \&\&\ SS_{T}$  Sum of Square
-
-为了推导 $S S_{R E S}$ 包含 $S S_T$ 的形式, 我们可以从它们的定义出发。
-首先定义以下变量：
-
-1. $S S_T$ (总平方和) :
-   
-   $$
-   S S_T=\sum_{i=1}^n\left(y_i-\bar{y}\right)^2
-   $$
-2. $S S_{R E S}$ (残差平方和) :
-   
-   $$
-   S S_{R E S}=\sum_{i=1}^n\left(y_i-\hat{y}_i\right)^2
-   $$
-   
-   其中, $\hat{y}_i$ 是预测值, 给定为 $\hat{y}_i=\hat{\beta}_0+\hat{\beta}_1 x_i$ 。
-3. $S S_{R E G}$ （回归平方和）:
-   
-   $$
-   S S_{R E G}=\sum_{i=1}^n\left(\hat{y}_i-\bar{y}\right)^2
-   $$
-   
-   根据方差分解的属性, 我们有:
-   
-   $$
-   S S_T=S S_{R E S}+S S_{R E G}
-   $$
-   
-   我们的目标是使用 $S S_T$ 来表示 $S S_{R E S}$ 。
-   将 $S S_{R E S}$ 展开:
-   
-   $$
-   \begin{aligned}
-   & S S_{R E S}=\sum_{i=1}^n\left(y_i-\hat{y}_i\right)^2 \\
-   & =\sum_{i=1}^n\left(y_i-\bar{y}+\bar{y}-\hat{y}_i\right)^2 \\
-   & =\sum_{i=1}^n\left[\left(y_i-\bar{y}\right)+\left(\bar{y}-\hat{y}_i\right)\right]^2
-   \end{aligned}
-   $$
-   
-   现在, 我们可以将上述表达式进一步展开并组合:
-   $S S_{R E S}=\sum_{i=1}^n\left(y_i-\bar{y}\right)^2+\sum_{i=1}^n\left(\bar{y}-\hat{y}_i\right)^2+2 \sum_{i=1}^n\left(y_i-\right.$
-   $\bar{y})\left(\bar{y}-\hat{y}_i\right)$
-   注意到:
-   
-   $$
-   \sum_{i=1}^n\left(y_i-\bar{y}\right)=0
-   $$
-   
-   和
-   
-   $$
-   \sum_{i=1}^n \hat{y}_i=n \bar{y}
-   $$
-   
-   因此，交叉项为 0 :
-   
-   $$
-   2 \sum_{i=1}^n\left(y_i-\bar{y}\right)\left(\bar{y}-\hat{y}_i\right)=0
-   $$
-   
-   于是, 我们得到:
-   
-   $$
-   \begin{aligned}
-   & S S_{R E S}=\sum_{i=1}^n\left(y_i-\bar{y}\right)^2+\sum_{i=1}^n\left(\bar{y}-\hat{y}_i\right)^2 \\
-   & S S_{R E S}=S S_T-S S_{R E G}
-   \end{aligned}
-   $$
-   
-   这就是我们所需要的 $S S_{R E S}$ 关于 $S S_T$ 的表达式。
-
-
-
-
-
-
-
-
-
-## Probabiltiy Distribution
-
-| Variable | Function | mean  variance | Usage |
-| -------- | -------- | -------------- | ----- |
-|          |          |                |       |
-|          |          |                |       |
-|          |          |                |       |
-|          |          |                |       |
-|          |          |                |       |
-|          |          |                |       |
-|          |          |                |       |
-
-## ANOVA (**An**alysis **o**f **V**ari**a**nce)
-
-1. 总平方和 $S S_T$
-   $S S_T=\sum_{i=1}^n\left(y_i-\bar{y}\right)^2$
-   它表示数据中的总变异性。
-2. 回归平方和 $S S_R$
-   $S S_R=\sum_{i=1}^n\left(\hat{y}_i-\bar{y}\right)^2$
-   其中 $\hat{y}_i$ 是对于给定的 $x_i, y_i$ 的预测值。
-3. 残差平方和 $S S_{R e s}$ 或 $S S E$
-   $S S_{\text {Res }}=\sum_{i=1}^n\left(y_i-\hat{y}_i\right)^2$
-   或者可以使用:
-   
-   $$
-   S S_{\text {Res }}=S S_T-S S_R
-   $$
-4. $S_{x y}$ （协方差之和）
-   
-   $$
-   S_{x y}=\sum_{i=1}^n\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)
-   $$
-5. $S_{x x}$
-   
-   $$
-   S_{x x}=\sum_{i=1}^n\left(x_i-\bar{x}\right)^2
-   $$
-   
-   它表示 $x$ 的变异性。
-6. 残差均方 $M S_{\text {Res }}$
-   
-   $$
-   M S_{\text {Res }}=\frac{S S_{\text {Res }}}{n-2}
-   $$
-   
-   在简单线性回归中, 分母中的 2 是因为我们估计了两个参数：截距 $\beta_0$ 和斜率 $\beta_1$ 。
-   以上展开式描述的是简单线性回归的统计量。如果涉及多元线性回归, 其中有多个解释变量, 这些公式将会有所不同。
