@@ -45,45 +45,42 @@
 
 # 数学基础
 1. 概率论
-  1. 链式法则
-  	1. $P(a,b,c) = P(a|b,c)*P(b,c)$
-  	2. $P(b,c)   = P(b|c)*P(c)$
-  	3. $P(a,b,c) = P(a|b,c)*P(b*c)*P(c)$
-  2. 期望
-  	1. $$E[f(x)]=\sum P(x)f(x)=\int P(x)f(x) $$
-  	2. 遵从线性性质$$E(ax+by+c)=aE(x)+bE(y)+c$$
-  3. 方差
-  4. 常见分布:
-  	1. Bernoulli
-  	2. 高斯
-  	3. 指数
-  5. Bayes
-  	1. 关键词
-  		1. $P(A)$是先验概率(prior)，指的是样本中各种情况出现的概率 
-  		2. $P(B|A)$是似然(likelihood)，表示A发生的条件下，B出现的概率
-  		3. $P(A|B)$是后验概率(posterior)
-  	2. $P(A\cap B)=P(A)*P(B|A)=P(B)*P(A|B)$
-  	3. [学习材料](https://zhang-each.github.io/My-CS-Notebook/ML/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A002%EF%BC%9A%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86/#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF-naive-bayes)
+	1. 链式法则
+		1. $P(a,b,c) = P(a|b,c)*P(b,c)$
+		2. $P(b,c)   = P(b|c)*P(c)$
+		3. $P(a,b,c) = P(a|b,c)*P(b*c)*P(c)$
+	2. 期望
+		1. $$E[f(x)]=\sum P(x)f(x)=\int P(x)f(x) $$
+		2. 遵从线性性质$$E(ax+by+c)=aE(x)+bE(y)+c$$
+	3. 方差
+	4. 常见分布:
+		1. Bernoulli
+		2. 高斯
+		3. 指数
+	5. Bayes
+		1. 关键词
+			1. $P(A)$是先验概率(prior)，指的是样本中各种情况出现的概率 
+			2. $P(B|A)$是似然(likelihood)，表示A发生的条件下，B出现的概率
+			3. $P(A|B)$是后验概率(posterior)
+		2. $P(A\cap B)=P(A)*P(B|A)=P(B)*P(A|B)$
+		3. [学习材料](https://zhang-each.github.io/My-CS-Notebook/ML/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A002%EF%BC%9A%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86/#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF-naive-bayes)
 2. 信息熵 = E(信息量) =信息量的**期望**
-  1. "对于等概率的未知情况, 我们需要多少个单位的信息才能确定明确答案"
-  2. [教程1](https://www.bilibili.com/video/BV1oX4y1w7aG/?spm_id_from=333.337.search-card.all.click)
-     [教程2](https://www.bilibili.com/video/BV1jt411b7o3/?spm_id_from=333.337.search-card.all.click&vd_source=7ebac03674d52bcbe8d8aae95769990e)
-  3. 等可能事件中, 信息量$H=log_2(N)$, 
-    1. N为等可能事件的数量, 
-    2. 信息量代表为了区分这些事件, 需要分配不同的符号来进行表示. 
-    	1. e.g. N=8, 则在电脑中, 需要3 bit来区分, {000, 001, 010, 011,100,101,110,111}
-    	2. 这里3即为所需的信息量
-  4. 非等可能事件怎么办? 将概率 转化为 等可能时间系统中发生某个事件的概率
-    1. e.g. 中大乐透概率为1/2000万, 将问题转化为在2000万个球中摸出中奖球的概率
-    2. e.g. 一共两个非等概率事件A, B, P(A)=0.2, P(B)=0.8
-    	1. 转化为log(1/0.2) 与 log(1/0.8), 又因为发生的概率是0.2, 0.8
-    	2. 所以对应信息量是$P(A)log(\dfrac{1}{P(A)})+P(B)log(\dfrac{1}{P(B)})$
-    3. 对于完整的一个概率分布, 则$$
-       \begin{align}
-       \sum_{i=1}^NP_i log(\dfrac{1}{P_i})&=\sum_{i=1}^NP_i(log1-log(\dfrac{1}{P_i}))\\&=\sum_{i=1}^NP_i (0-log(\dfrac{1}{P_i}))\\&=-\sum_{i=1}^NP_i log(P_i)
-       \end{align}
-       $$
-
+	1. [教程](https://www.bilibili.com/video/BV1oX4y1w7aG/?spm_id_from=333.337.search-card.all.click)
+	2. 等可能事件中, 信息量$H=log_2(N)$, 
+		1. N为等可能事件的数量, 
+		2. 信息量代表为了区分这些事件, 需要分配不同的符号来进行表示. 
+			1. e.g. N=8, 则在电脑中, 需要3 bit来区分, {000, 001, 010, 011,100,101,110,111}
+			2. 这里3即为所需的信息量
+	3. 非等可能事件怎么办? 将概率 转化为 等可能时间系统中发生某个事件的概率
+		1. e.g. 中大乐透概率为1/2000万, 将问题转化为在2000万个球中摸出中奖球的概率
+		2. e.g. 一共两个费等概率事件A, B, P(A)=0.2, P(B)=0.8
+			1. 转化为log(1/0.2) 与 log(1/0.8), 又因为发生的概率是0.2, 0.8
+			2. 所以对应信息量是$P(A)log(\dfrac{1}{P(A)})+P(B)log(\dfrac{1}{P(B)})$
+		3. 对于完整的一个概率分布, 则$$
+		   \begin{align}
+		   \sum_{i=1}^NP_i log(\dfrac{1}{P_i})&=\sum_{i=1}^NP_i(log1-log(\dfrac{1}{P_i}))\\&=\sum_{i=1}^NP_i (0-log(\dfrac{1}{P_i}))\\&=-\sum_{i=1}^NP_i log(P_i)
+		   \end{align}
+		   $$
 3. 矩阵论
 
 # 特征工程与模型选择

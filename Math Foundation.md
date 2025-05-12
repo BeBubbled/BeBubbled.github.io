@@ -2,13 +2,14 @@
 
 [TOC]
 
-## Permutation
+## Permutation && Combination
 
-$P(n,r)=^{b}P_{r}=_{n}P_{r}=\dfrac{n!}{(n-r)!}$
-
-## Combination
-
-$C(n,r)=^{b}C_{r}=_{n}C_{r}=\left(\begin{array}{l} n \\ r \end{array}\right)=\dfrac{n!}{r!(n-r)!}$
+$$
+\begin{alignat}{1}
+P(n,r)&=^{b}P_{r}=_{n}P_{r}=\dfrac{n!}{(n-r)!}\\
+C(n,r)&=^{b}C_{r}=_{n}C_{r}=\left(\begin{array}{l} n \\ r \end{array}\right)=\dfrac{n!}{r!(n-r)!}
+\end{alignat}
+$$
 
 ## Summation
 
@@ -49,7 +50,7 @@ $$
 &E ( a X)&&= a * E ( X )\\
 &E ( a \pm X )&&= a \pm E ( X )\\
 &E ( a \pm b X )&&= a \pm b E ( X )\\
-&E [( a \pm X ) * b ]&&=( a \pm E ( X )) * b\\
+&E [( a \pm X ) b ]&&=( a \pm E ( X ))b\\
 &E ( X + Y )&&= E ( X )+ E ( Y )\\
 &E ( X Y )&&= E ( X ) E ( Y ), (\text{X,Y are independent})\\
 &E[X^2]&&=Var[X]+E[X]^2\\
@@ -106,6 +107,11 @@ $$
 $$
 \begin{alignat}{3}
 & \textbf{Bayes}\\\\
+&P(A)   先验概率(prior)&&样本中各种情况出现的概率 \\
+&P(B|A) 似然(likelihood)&&A发生的条件下，B出现的概率\\
+&&& \text{With Given Data, the Upper limit of }p_{\theta}()\\
+&&& 需要补充一下, 原本的忘记了, 在论文中
+&P(A|B) 后验概率(posterior)\\
 &P(A|B)&&=\dfrac{P(A\cap B)}{P(B)}=\dfrac{P(A)P(B|A)}{P(B)}=\dfrac{P(B)P(A|B)}{P(B)}\\
 &P(A,B)&&=P(A,B)\\
 &P(A_{0:T})&&=P(A_0,A_1,A_2,\cdots, A_T)\\\\
@@ -120,10 +126,44 @@ $$
 &P(A) &&= \int_B P(A, B) dB\\
 &P(A) &&= \sum_B P(A, B)\\
 &\mathbf{KL}\\
-&KL(P \| Q) &&= \int P(x) \log \frac{P(x)}{Q(x)} dx\\
+&D_{KL}(P \|| Q) &&= \int p(x) \log \frac{p(x)}{q(x)} dx\\
 &{待办: 从信息熵到KL散度, 需要去看扫描的草稿}
 \end{alignat}
 $$
 
 ## Stochastic differential equation (SDE)
+
+
+
+
+
+## $D_{KL}$
+
+$$
+\begin{alignat}{1}
+
+D_{KL}(P \parallel Q) & = \sum_{x} P(x) \log \frac{P(x)}{Q(x)}\\
+& = \int p(x) \log \frac{p(x)}{q(x)} \, dx \\
+% &=\underbrace{E_{p(X)}}_{\mathrlap{\underline{E_{X\sim p }/E}}\text{}}[logp(x)-logq(x)]\\
+&=E_{p(X)}[logp(x)-logq(x)]\\
+&=E_{X\sim p}[logp(x)-logq(x)]\\
+&=E[logp(x)-logq(x)]\\
+
+\end{alignat}
+$$
+
+
+
+
+
+
+
+```shell
+docker run -it -d \
+    --name comp_7012_software \
+    -v /Users/bebubble/Writing/COMP_7012_Soft/demo:/home/bebubble \
+    -u bebubble \
+    -p 3000:3000 \
+    305c77f345e0 /bin/bash
+```
 
