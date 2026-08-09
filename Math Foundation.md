@@ -98,7 +98,7 @@ Var(x)&=\sigma^2\\
 &=E[(X-E(X))^2]\\
 &=E[(X-\overline{x})^2]
 
-\end{aligned}
+  \end{aligned}
 $$
 
 
@@ -112,9 +112,16 @@ $$
 &&& \text{With Given Data, the Upper limit of }p_{\theta}()\\
 &&& 需要补充一下, 原本的忘记了, 在论文中
 &P(A|B) 后验概率(posterior)\\
-&P(A|B)&&=\dfrac{P(A\cap B)}{P(B)}=\dfrac{P(A)P(B|A)}{P(B)}=\dfrac{P(B)P(A|B)}{P(B)}\\
-&P(A,B)&&=P(A,B)\\
+&P(A,B)&&=P(A\cap B)\\
 &P(A_{0:T})&&=P(A_0,A_1,A_2,\cdots, A_T)\\\\
+&P(A|B)&&=\dfrac{P(A\cap B)}{P(B)}=\dfrac{P(A)P(B|A)}{P(B)}=\dfrac{P(B)P(A|B)}{P(B)}\\
+%&\textbf{Multi Var Bayes}\\\\
+&P(A | B, C)&& = \frac{P(B, C | A) P(A)}{P(B, C)}\\
+% &\textbf{Multi Var Bayes+ Chain Rule}
+&P(A \mid B, C)&&=\frac{P(B \mid A, C) P(A \mid C)}{P(B \mid C)}\\
+&P(A \mid B, C, D)&&=\frac{P(B \mid A, C, D) P(C \mid A, D) P(D \mid A) P(A)}{P(B, C, D)}\\
+
+
 &\textbf{Chain Rule of Probability}\\\\
 &P(A_0, A_1, A_2, \dots, A_T) &&= P(A_T) P(A_{T-1} \mid A_T) P(A_{T-2} \mid A_{T-1}, A_T) \cdots \\ &&& \qquad P(A_0 \mid A_1, A_2, \dots, A_T)\\
 & \textbf{Law of Total Probability}\\
