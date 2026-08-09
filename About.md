@@ -1,18 +1,16 @@
-![Icon](About.assets/Image_2.png)
+# BeBubble
 
-About me: Ph.D. student
+Ph.D. student. This site collects research notes, learning resources, and small experiments.
 
-Current Research Interest: 
+## Research interests
 
-* No Data Training
-  * [NO TRAINING DATA, NO CRY: MODEL EDITING WITHOUT TRAINING DATA OR FINETUNING](https://openreview.net/pdf?id=wLR9d5ZFpY)
-* Image2Video
+- **No-data training** — including [model editing without training data or finetuning](https://openreview.net/pdf?id=wLR9d5ZFpY)
+- **Image-to-video**
 
-Tools: Chatgpt, Pytorch, Scipy, Connected Papers, Paperswithcode
+## Tools
 
+ChatGPT, PyTorch, SciPy, Connected Papers, and Papers with Code.
 
+## A small diversion
 
-Funny things: 
-
-1. [DOCOMO Parrot Brothers](https://www.youtube.com/watch?v=8gqKzv6nuIk&t=83s)
-
+[DOCOMO Parrot Brothers](https://www.youtube.com/watch?v=8gqKzv6nuIk&t=83s)
