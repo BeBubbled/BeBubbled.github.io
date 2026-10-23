@@ -8,16 +8,20 @@ Ph.D. student. This site collects research notes, learning resources, and small 
 
 Robustness and evaluation of vision-language and large language models, federated learning security, and watermarking.
 
-- **Identity preservation in face editing** — rethinking how identity preservation is evaluated in face editing.
-- **Texture illusions in depth estimation** — when surface texture misleads monocular depth estimation and vision-language models.
+<details class="project">
+<summary>When texture fools depth</summary>
+<p>Some surface patterns look like geometry. We look at what depth estimators and vision-language models actually perceive when the picture plays tricks on them.</p>
+</details>
 
 ### Generative computer vision
 
 Diffusion-based image and video synthesis, with an emphasis on training-free and plug-and-play adaptation.
 
-- **Spatial relations in text-to-image models** — why diffusion models get spatial relations wrong, and a low-cost fix.
-- **Video object removal** — when should a model copy existing content, and when should it generate new content?
-- **Region-level style editing** — applying style LoRAs to selected regions of an image.
+<details class="project">
+<summary>Left, right, and the noise in between</summary>
+<p>Text-to-image models often place objects on the wrong side. It turns out the prompt is not always what decides, and the fix can be surprisingly cheap.</p>
+<img src="About.assets/teasers/Diffusion_Probe.png" alt="Teaser: spatial relations in text-to-image diffusion">
+</details>
 
 ### Multimodal understanding
 
@@ -25,14 +29,11 @@ Clinical video understanding and visual reasoning.
 
 ### Reliability and efficiency of vision systems
 
-- **Compression for machine vision** — learned image coding that preserves tiny objects for drone-view detection.
-- **Guidance in compressed diffusion transformers** — how pruning and distillation affect the guidance signal.
-- **Rolling shutter in 3D reconstruction** — how rolling-shutter distortion affects feed-forward 3D reconstruction models.
-- **Confidence in pruned 3D foundation models** — whether pruned models still know when they are wrong.
-
-### Open collaborations
-
-I am looking for collaborators on the projects above, especially people with experience in compositional generation, face recognition, video inpainting and point tracking, learned image coding, model compression, camera geometry, monocular depth, 3D uncertainty estimation, or controllable image editing. Feel free to reach out via [GitHub](https://github.com/BeBubbled).
+<details class="project">
+<summary>Compressing images for machines, not eyes</summary>
+<p>When the viewer is a detector rather than a person, the bits should go somewhere else, especially for the smallest objects in a drone's view.</p>
+<img src="About.assets/teasers/VisionCodec.png" alt="Teaser: image compression for tiny-object detection">
+</details>
 
 ## Tools
 
