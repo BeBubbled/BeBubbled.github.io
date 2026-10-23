@@ -37,7 +37,7 @@ Clinical video understanding and visual reasoning.
 
 ## Tools
 
-ChatGPT, PyTorch, SciPy, Connected Papers, and Papers with Code.
+PyTorch, SciPy, Connected Papers, and Papers with Code.
 
 ## A small diversion
 
