@@ -73,7 +73,7 @@
       width: 10.5rem;
       height: 10.5rem;
       margin: 0 auto 1.4rem;
-      object-fit: cover;
+      overflow: hidden;
       border: 1px solid #e3e8ea;
       border-radius: 50%;
     }
@@ -289,7 +289,11 @@
 <body>
   <div id="app">Loading…</div>
   <aside class="profile-rail" aria-label="Profile">
-    <img class="profile-rail__avatar" src="About.assets/IMG_2550.jpg" alt="BeBubble avatar">
+    <svg class="profile-rail__avatar" viewBox="0 0 100 100" role="img" aria-label="Default avatar">
+      <rect width="100" height="100" fill="#d9dee2"/>
+      <circle cx="50" cy="40" r="17" fill="#fff"/>
+      <path d="M18 92c2-19 15-30 32-30s30 11 32 30z" fill="#fff"/>
+    </svg>
     <strong class="profile-rail__name">BeBubble</strong>
     <p class="profile-rail__bio">Research notes, learning resources, and experiments.</p>
     <a class="profile-rail__link" href="https://github.com/BeBubbled" target="_blank" rel="noopener">GitHub profile ↗</a>
