@@ -10,7 +10,8 @@ Robustness and evaluation of vision-language and large language models, federate
 
 <details class="project">
 <summary>When texture fools depth</summary>
-<p>Some surface patterns look like geometry. We look at what depth estimators and vision-language models actually perceive when the picture plays tricks on them.</p>
+<p>Surface patterns can look like real geometry. We study how visual illusions mislead depth estimation and how to make visual perception more reliable.</p>
+<img src="About.assets/teasers/ReTextDepth-public.png" alt="Teaser: a visual illusion and contrasting depth estimates, with technical details redacted" width="2200" height="887" loading="lazy" decoding="async">
 </details>
 
 ### Generative computer vision
